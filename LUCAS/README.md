@@ -23,4 +23,5 @@ As a result of manipulations, many variables may become disconnected from the ta
 
 ## LUCAS2: Discovering the direct causes
 ![causal graph](./images/lucas2.png)
+
 The graph of Figure 3 shows the model we used to generate the test data in LUCAS2 (same training data as LUCAS0). Here we manipulated all the variables except the target. As a result, only the direct causes of the target are predictive, and coincide with the Markov blanket (MB) of the manipulated distribution. The Fscore is again based on the MB of the manipulated distribution. Note that manipulating all the variables can seldom be done in real experimental setups.
