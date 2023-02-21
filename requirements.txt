@@ -1,0 +1,6 @@
+dowhy==0.9.1
+pingouin==0.5.3
+cdt==0.6.0
+conditional-independence==0.1a5
+hyppo==0.3.2
+scikit-learn==1.2.1
