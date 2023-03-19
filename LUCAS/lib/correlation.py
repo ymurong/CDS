@@ -29,6 +29,21 @@ def conditional_chi2_test(data: np.array, i: int, j: int, cond_set: List[int]):
     return chi2, p
 
 
+def conditional_chi2_matrix(data: pd.DataFrame, alpha=0.05, cond_set=[0]) -> np.ndarray[bool]:
+    """
+        chi2 independency matrix
+        :return: numpy matrix of boolean values
+            - True: Dependency (Reject Null-Hypothesis)
+            - False: Independent (Fail to Reject Null-Hypothesis)
+        """
+    nb_features = data.shape[1]
+    chi2_independency_matrix = np.empty((nb_features, nb_features))
+    for i in range(nb_features):
+        for j in range(nb_features):
+            chi2_independency_matrix[i, j] = conditional_chi2_test(data, i, j, cond_set=cond_set)[1] < alpha
+    return chi2_independency_matrix
+
+
 def chi2_test(x: np.array, y: np.array) -> Tuple:
     """
     chi2 indepency test
